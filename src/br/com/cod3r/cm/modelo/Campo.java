@@ -2,6 +2,7 @@ package br.com.cod3r.cm.modelo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiConsumer;
 
 public class Campo {
 
@@ -14,6 +15,10 @@ public class Campo {
     private boolean marcado;
 
     private List<Campo> vizinhos = new ArrayList<>();
+    private List<CampoObservador> observadores = new ArrayList<>();
+
+    // Uma outra opção pra poder usar, ela também é functional interface
+    // private List<BiConsumer<Campo, CampoEvento>> observadores2 = new ArrayList<>();
 
     Campo(int linha, int coluna) {
         this.linha = linha;

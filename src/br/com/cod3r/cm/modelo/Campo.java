@@ -25,6 +25,15 @@ public class Campo {
         this.coluna = coluna;
     }
 
+    public void registrarObservador(CampoObservador observador) {
+        observadores.add(observador);
+    }
+
+    private void notificarObservadores(CampoEvento evento) {
+        observadores.stream()
+                .forEach(o -> o.eventoOcorreu(this, evento)); // Esse this fala sobre o método atual
+    }
+
     boolean adicionarVizinho(Campo vizinho) {
 
         boolean linhaDiferente = linha != vizinho.linha;

@@ -58,18 +58,24 @@ public class Campo {
     void alternarMarcacao() {
         if (!aberto) {
             marcado = !marcado;
+
+            if (marcado) {
+                notificarObservadores(CampoEvento.MARCAR);
+            } else {
+                notificarObservadores(CampoEvento.DESMARCAR);
+            }
         }
     }
 
     boolean abrir() {
-
         if (!aberto && !marcado) {
-            aberto = true;
-
             // Entrando aqui o player perde
             if (minado) {
-                // TODO implementar nova versão
+                notificarObservadores(CampoEvento.EXPLODIR);
+                return true;
             }
+
+            setAberto(true);
 
             // Isso faz com que ele vai abrindo até a vizinhança não ser mais segura (ter alguma mina)
             if (vizinhancaSegura()) {
@@ -101,6 +107,10 @@ public class Campo {
 
     void setAberto(boolean aberto) {
         this.aberto = aberto;
+
+        if (aberto) {
+            notificarObservadores(CampoEvento.ABRIR);
+        }
     }
 
     public boolean isAberto() {

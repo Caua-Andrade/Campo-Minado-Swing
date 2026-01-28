@@ -1,7 +1,5 @@
 package br.com.cod3r.cm.modelo;
 
-import br.com.cod3r.cm.excecao.ExplosaoException;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;

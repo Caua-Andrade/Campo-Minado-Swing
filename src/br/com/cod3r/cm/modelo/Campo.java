@@ -56,7 +56,7 @@ public class Campo {
 
             // Entrando aqui o player perde
             if (minado) {
-                throw new ExplosaoException();
+                // TODO implementar nova versão
             }
 
             // Isso faz com que ele vai abrindo até a vizinhança não ser mais segura (ter alguma mina)
@@ -123,20 +123,4 @@ public class Campo {
         marcado = false;
     }
 
-    public String toString() {
-
-        if (marcado) {
-            return "x";
-        } else if (aberto && minado) {
-            return "*";
-        } else if (aberto && minasNaVizinhanca() > 0) {
-            // Mostra a quantidade de minas na vizinhança
-            return Long.toString(minasNaVizinhanca());
-        } else if (aberto) {
-            return " ";
-        } else {
-            return "?";
-        }
-
-    }
 }

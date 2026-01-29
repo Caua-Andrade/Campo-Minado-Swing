@@ -49,6 +49,7 @@ public class Tabuleiro implements CampoObservador {
                 campo.registrarObservador(this);
                 campos.add(campo);
             }
+
         }
     }
 

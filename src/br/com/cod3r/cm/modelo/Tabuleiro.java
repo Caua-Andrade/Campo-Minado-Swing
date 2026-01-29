@@ -2,6 +2,7 @@ package br.com.cod3r.cm.modelo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class Tabuleiro implements CampoObservador {
@@ -11,6 +12,7 @@ public class Tabuleiro implements CampoObservador {
     private int minas;
 
     private final List<Campo> campos = new ArrayList<>();
+    private final List<Consumer<Boolean>> observadores = new ArrayList<>();
 
     public Tabuleiro(int linhas, int colunas, int minas) {
         this.linhas = linhas;
@@ -20,6 +22,15 @@ public class Tabuleiro implements CampoObservador {
         gerarCampos();
         associarVizinhos();
         sortearAsMinas();
+    }
+
+    public void registrarObservador(Consumer<Boolean> observador) {
+        observadores.add(observador);
+    }
+
+    private void notificarObservadores(boolean resultado) {
+        observadores.stream()
+                .forEach(o -> o.accept(resultado));
     }
 
     public void abrir(int linha, int coluna) {

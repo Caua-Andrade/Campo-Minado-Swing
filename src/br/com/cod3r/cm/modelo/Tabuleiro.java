@@ -24,7 +24,7 @@ public class Tabuleiro implements CampoObservador {
         sortearAsMinas();
     }
 
-    public void paraCada(Consumer<Campo> funcao) {
+    public void paraCadaCampo(Consumer<Campo> funcao) {
         campos.forEach(funcao);
     }
 

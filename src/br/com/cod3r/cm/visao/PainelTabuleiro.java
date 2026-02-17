@@ -10,6 +10,6 @@ public class PainelTabuleiro extends JPanel {
     public PainelTabuleiro(Tabuleiro tabuleiro) {
 
         // para organizar os componentes visuais
-        setLayout(new GridLayout(tabuleiro));
+        setLayout(new GridLayout(tabuleiro.getLinhas(), tabuleiro.getColunas()));
     }
 }

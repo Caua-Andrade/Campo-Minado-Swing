@@ -88,6 +88,14 @@ public class Tabuleiro implements CampoObservador {
         sortearAsMinas();
     }
 
+    public int getLinhas() {
+        return linhas;
+    }
+
+    public int getColunas() {
+        return colunas;
+    }
+
     @Override
     public void eventoOcorreu(Campo campo, CampoEvento evento) {
         if (evento == CampoEvento.EXPLODIR) {

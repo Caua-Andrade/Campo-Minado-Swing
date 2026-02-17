@@ -12,10 +12,6 @@ public class PainelTabuleiro extends JPanel {
         // para organizar os componentes visuais
         setLayout(new GridLayout(tabuleiro.getLinhas(), tabuleiro.getColunas()));
 
-        int total = tabuleiro.getLinhas() * tabuleiro.getColunas();
-
-        for (int i = 0; i < total; i++) {
-            add(new BotaoCampo(null));
-        }
+        tabuleiro.paraCada(c -> add(new BotaoCampo(c)));
     }
 }

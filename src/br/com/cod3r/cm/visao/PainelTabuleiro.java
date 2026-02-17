@@ -15,7 +15,7 @@ public class PainelTabuleiro extends JPanel {
         int total = tabuleiro.getLinhas() * tabuleiro.getColunas();
 
         for (int i = 0; i < total; i++) {
-            add(new JButton());
+            add(new BotaoCampo(null));
         }
     }
 }

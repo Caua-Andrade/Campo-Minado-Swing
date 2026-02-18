@@ -18,6 +18,7 @@ public class BotaoCampo extends JButton implements CampoObservador {
 
     public BotaoCampo(Campo campo) {
         this.campo = campo;
+        setBackground(BG_PADRAO);
         setBorder(BorderFactory.createBevelBorder(0));
         campo.registrarObservador(this);
     }

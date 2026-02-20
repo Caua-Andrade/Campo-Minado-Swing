@@ -79,6 +79,8 @@ public class BotaoCampo extends JButton implements CampoObservador, MouseListene
                 setForeground(Color.PINK);
                 break;
         }
+
+        String valor = !
     }
 
     // interface dos eventos do mouse

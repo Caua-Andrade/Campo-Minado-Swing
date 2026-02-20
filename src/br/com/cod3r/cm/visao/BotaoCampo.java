@@ -80,7 +80,8 @@ public class BotaoCampo extends JButton implements CampoObservador, MouseListene
                 break;
         }
 
-        String valor = !
+        String valor = !campo.vizinhancaSegura() ? campo.minasNaVizinhanca() + "" : "";
+        setText(valor);
     }
 
     // interface dos eventos do mouse

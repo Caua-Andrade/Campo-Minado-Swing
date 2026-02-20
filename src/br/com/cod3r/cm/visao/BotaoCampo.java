@@ -62,7 +62,11 @@ public class BotaoCampo extends JButton implements CampoObservador, MouseListene
 
     @Override
     public void mousePressed(MouseEvent e) {
-
+        if (e.getButton() == 1) {
+            System.out.println("Botão esquerdo!");
+        } else {
+            System.out.println("Outro botão! ");
+        }
     }
 
     public void mouseClicked(MouseEvent e) {}

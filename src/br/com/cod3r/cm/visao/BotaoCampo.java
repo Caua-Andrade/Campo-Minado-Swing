@@ -6,6 +6,7 @@ import br.com.cod3r.cm.modelo.CampoObservador;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class BotaoCampo extends JButton implements CampoObservador, MouseListener {
@@ -57,4 +58,15 @@ public class BotaoCampo extends JButton implements CampoObservador, MouseListene
     }
 
     // interface dos eventos do mouse
+
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    public void mouseClicked(MouseEvent e) {}
+    public void mouseEntered(MouseEvent e) {}
+    public void mouseExited(MouseEvent e) {}
+    public void mouseReleased(MouseEvent e) {}
 }

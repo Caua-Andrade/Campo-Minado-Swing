@@ -22,6 +22,8 @@ public class BotaoCampo extends JButton implements CampoObservador, MouseListene
         this.campo = campo;
         setBackground(BG_PADRAO);
         setBorder(BorderFactory.createBevelBorder(0));
+
+        addMouseListener(this);
         campo.registrarObservador(this);
     }
 
@@ -65,7 +67,7 @@ public class BotaoCampo extends JButton implements CampoObservador, MouseListene
         if (e.getButton() == 1) {
             System.out.println("Botão esquerdo!");
         } else {
-            System.out.println("Outro botão! ");
+            System.out.println("Outro botão!");
         }
     }
 

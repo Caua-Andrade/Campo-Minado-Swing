@@ -6,8 +6,9 @@ import br.com.cod3r.cm.modelo.CampoObservador;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseListener;
 
-public class BotaoCampo extends JButton implements CampoObservador {
+public class BotaoCampo extends JButton implements CampoObservador, MouseListener {
 
     private final Color BG_PADRAO = new Color(184, 184, 184);
     private final Color BG_MARCADO = new Color(8, 179, 247);
@@ -54,4 +55,6 @@ public class BotaoCampo extends JButton implements CampoObservador {
 
     private void aplicarEstiloAbrir() {
     }
+
+    // interface dos eventos do mouse
 }

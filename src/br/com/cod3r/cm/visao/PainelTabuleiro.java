@@ -15,11 +15,15 @@ public class PainelTabuleiro extends JPanel {
         tabuleiro.paraCadaCampo(c -> add(new BotaoCampo(c)));
 
         tabuleiro.registrarObservador(e -> {
-            if (e.isGanhou()) {
-                JOptionPane.showMessageDialog(this, "Ganhou :)");
-            } else {
-                JOptionPane.showMessageDialog(this, "Perdeu :(");
-            }
+
+            // Isso faz com que ele atualiza primeiro a interface e depois mostra a mensagem para o usuário
+            SwingUtilities.invokeLater(() -> {
+                if (e.isGanhou()) {
+                    JOptionPane.showMessageDialog(this, "Ganhou :)");
+                } else {
+                    JOptionPane.showMessageDialog(this, "Perdeu :(");
+                }
+            });
         });
     }
 }
